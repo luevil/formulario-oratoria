@@ -1,74 +1,154 @@
+
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Curso de Oratória com Isabella Ornellas</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Oratória com Isabella Ornellas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #fce4ec);
+            color: #333;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #form-container {
+            background-color: #ffffffdd;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        .form-step {
+            display: none;
+        }
+        .form-step.active {
+            display: block;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 0.8rem;
+            margin-top: 0.5rem;
+            border: 2px solid #90caf9;
+            border-radius: 0.8rem;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #f48fb1;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            margin-top: 1rem;
+            border-radius: 0.8rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-  <main>
-    <h1>Curso de Oratória com Isabella Ornellas 🎤</h1>
-    <p>Seja bem-vindo(a) ao Curso de Oratória com Isabella Ornellas! 🌟<br>
-      Este curso foi criado para ajudar você a desenvolver clareza, confiança e presença na comunicação, seja no trabalho, em apresentações, reuniões ou no dia a dia.
-    </p>
+    <div id="form-container">
+        <form id="multiStepForm" action="https://formsubmit.co/ivoluan27@gmail.com" method="POST">
+            <input type="hidden" name="_next" value="https://obrigado.netlify.app/">
+            <input type="hidden" name="_captcha" value="false">
 
-    <form action="https://formspree.io/f/SEU_ENDPOINT" method="POST">
-      <label>Nome completo:*<br>
-        <input type="text" name="nome" required>
-      </label>
+            <div class="form-step active">
+                <label for="nome">Nome completo:</label>
+                <input type="text" name="Nome completo" required>
+            </div>
 
-      <label>CPF:*<br>
-        <input type="text" name="cpf" required>
-      </label>
+            <div class="form-step">
+                <label for="cpf">CPF:</label>
+                <input type="text" name="CPF" required>
+            </div>
 
-      <label>Celular:*<br>
-        <input type="tel" name="celular" required>
-      </label>
+            <div class="form-step">
+                <label for="celular">Celular:</label>
+                <input type="tel" name="Celular" required>
+            </div>
 
-      <label>Email:*<br>
-        <input type="email" name="email" required>
-      </label>
+            <div class="form-step">
+                <label for="email">Email:</label>
+                <input type="email" name="Email" required>
+            </div>
 
-      <label>Profissão:*<br>
-        <input type="text" name="profissao" required>
-      </label>
+            <div class="form-step">
+                <label for="profissao">Profissão:</label>
+                <input type="text" name="Profissão">
+            </div>
 
-      <label>Formação:*<br>
-        <input type="text" name="formacao" required>
-      </label>
+            <div class="form-step">
+                <label for="formacao">Formação:</label>
+                <input type="text" name="Formação">
+            </div>
 
-      <fieldset>
-        <legend>Pós graduação:*</legend>
-        <label><input type="radio" name="pos_graduacao" value="Sim" required> Sim</label>
-        <label><input type="radio" name="pos_graduacao" value="Não" required> Não</label>
-      </fieldset>
+            <div class="form-step">
+                <label for="pos">Pós-graduação?</label>
+                <select name="Pós-graduação?">
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+            </div>
 
-      <label>Se “sim”, qual?<br>
-        <input type="text" name="pos_qual">
-      </label>
+            <div class="form-step">
+                <label for="se-sim">Se 'sim', qual?</label>
+                <input type="text" name="Se sim, qual?">
+            </div>
 
-      <label>Endereço:*<br>
-        <input type="text" name="endereco" required>
-      </label>
+            <div class="form-step">
+                <label for="endereco">Endereço:</label>
+                <input type="text" name="Endereço">
+            </div>
 
-      <label>Quais as suas duas principais dificuldades na oratória / comunicação atualmente?*<br>
-        <textarea name="dificuldades" required></textarea>
-      </label>
+            <div class="form-step">
+                <label for="dificuldades">Quais são suas duas principais dificuldades na oratória / comunicação atualmente?</label>
+                <input type="text" name="Dificuldades" required>
+            </div>
 
-      <fieldset>
-        <legend>Forma de pagamento:*</legend>
-        <label><input type="radio" name="pagamento" value="À vista (Pix/depósito)" required> À vista (Pix/depósito)</label>
-        <label><input type="radio" name="pagamento" value="Parcelado (Cartão de crédito)" required> Parcelado (Cartão de crédito)</label>
-      </fieldset>
+            <div class="form-step">
+                <label for="pagamento">Forma de pagamento:</label>
+                <select name="Forma de pagamento" required>
+                    <option value="À vista (Pix/depósito)">À vista (Pix/depósito)</option>
+                    <option value="Parcelado (Cartão de crédito)">Parcelado (Cartão de crédito)</option>
+                </select>
+            </div>
 
-      <label>
-        <input type="checkbox" name="aceite" required>
-        Li e aceito os termos: Em caso de desistência do curso faltando 15 dias ou menos para a realização da turma, 30% do valor investido ficará com a empresa realizadora para custear despesas administrativas.
-      </label>
+            <div class="form-step">
+                <label>Li e aceito os termos:</label>
+                <input type="hidden" name="Aceita termos" value="Sim">
+                <p>Em caso de desistência do curso faltando 15 dias ou menos para a realização do mesmo, 30% do valor investido ficará com a empresa realizadora pra cobrir custos.</p>
+            </div>
 
-      <button type="submit">Enviar inscrição ✅</button>
-    </form>
-  </main>
+            <button type="button" id="nextBtn">Próxima</button>
+            <button type="submit" id="submitBtn" style="display:none;">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        const steps = document.querySelectorAll('.form-step');
+        let currentStep = 0;
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submitBtn');
+
+        nextBtn.addEventListener('click', () => {
+            steps[currentStep].classList.remove('active');
+            currentStep++;
+            if(currentStep < steps.length) {
+                steps[currentStep].classList.add('active');
+            }
+            if(currentStep === steps.length - 1) {
+                nextBtn.style.display = 'none';
+                submitBtn.style.display = 'inline-block';
+            }
+        });
+    </script>
 </body>
 </html>
